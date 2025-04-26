@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\jugadores-futbol-peruano.props" />
+</Project>

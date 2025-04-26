@@ -1,0 +1,49 @@
+@model jugadores_futbol_peruano.Models.Player
+
+@{
+    ViewData["Title"] = "Eliminar Jugador";
+}
+
+<h1>Eliminar Jugador</h1>
+
+<h3>¿Estás seguro que deseas eliminar este jugador?</h3>
+
+<div>
+    <h4>Jugador</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt class="col-sm-3">
+            Equipo
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Team.Name)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary ml-2">Cancelar</a>
+    </form>
+</div>

@@ -1,0 +1,46 @@
+@model jugadores_futbol_peruano.Models.Player
+
+@{
+    ViewData["Title"] = "Detalles del Jugador";
+}
+
+<h1>Detalles del Jugador</h1>
+
+<div>
+    <h4>Jugador</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
+
+        <dt class="col-sm-3">
+            Equipo
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Team.Name)
+        </dd>
+    </dl>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary ml-2">Volver a la lista</a>
+</div>
